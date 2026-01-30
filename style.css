@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap');
+
+:root{
+  --neon-blue:#00f7ff;
+  --neon-pink:#ff00ff;
+  --dark-bg:#121314;
+  --card-bg:#0b1228;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:radial-gradient(circle at top, #0a1a3c, #b9bac0);
+  color:#fff;
+  overflow-x:hidden;
+  position:relative;
+}
+
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(0,247,255,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(0,247,255,0.08) 1px, transparent 1px);
+  background-size:60px 60px;
+  animation:pcbMove 20s linear infinite;
+  z-index:-3;
+}
+
+@keyframes pcbMove{
+  from{background-position:0 0;}
+  to{background-position:600px 600px;}
+}
+
+.particles{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  overflow:hidden;
+}
+
+.particles span{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:var(--neon-blue);
+  box-shadow:0 0 10px var(--neon-blue);
+  border-radius:50%;
+  animation:float 12s linear infinite;
+}
+
+.particles span:nth-child(1){left:10%;animation-duration:14s;}
+.particles span:nth-child(2){left:20%;animation-duration:9s;}
+.particles span:nth-child(3){left:35%;animation-duration:12s;}
+.particles span:nth-child(4){left:50%;animation-duration:10s;}
+.particles span:nth-child(5){left:65%;animation-duration:13s;}
+.particles span:nth-child(6){left:80%;animation-duration:11s;}
+.particles span:nth-child(7){left:15%;animation-duration:16s;}
+.particles span:nth-child(8){left:45%;animation-duration:8s;}
+.particles span:nth-child(9){left:70%;animation-duration:15s;}
+.particles span:nth-child(10){left:90%;animation-duration:9s;}
+
+@keyframes float{
+  from{transform:translateY(110vh);opacity:0;}
+  to{transform:translateY(-10vh);opacity:1;}
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(14, 13, 14, 0.899);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--neon-blue);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+}
+
+.logo{
+  font-family:'Orbitron';
+  color: rgb(165, 162, 179);
+  font-size:22px;
+  letter-spacing:2px;
+  text-shadow:0 0 10px var(--neon-blue);
+}
+
+.menu a{
+  margin-left:25px;
+  text-decoration:none;
+   color: rgb(165, 162, 179);
+  position:relative;
+   text-shadow:0 0 10px var(--neon-blue);
+}
+
+.menu a::after{
+  content:'';
+  width:0;
+  height:2px;
+  background:var(--neon-pink);
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  transition:0.3s;
+}
+
+.menu a:hover::after{width:100%;}
+
+.hamburger{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:120px 60px;
+  position:relative;
+}
+
+.hero::after{
+  content:'';
+  position:absolute;
+  width:200%;
+  height:3px;
+  background:linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+  top:50%;
+  animation:circuit 3s linear infinite;
+}
+
+@keyframes circuit{
+  from{transform:translateX(-100%);}
+  to{transform:translateX(100%);}
+}
+
+.hero-content h1{
+  font-family:'Orbitron';
+  font-size:48px;
+  text-shadow:0 0 15px var(--neon-blue);
+}
+
+.hero-content p{
+  max-width:500px;
+  opacity:0.85;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 30px;
+  background:var(--neon-blue);
+  color:#d8cccc;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:none
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--neon-pink);
+  box-shadow:rgba(0, 255, 255, 0.25)
+  transform:scale(1.05);
+}
+
+.hero-img img{
+  width:100%;
+  filter:drop-shadow(0 0 25px var(--neon-blue));
+ 
+}
+
+/* ================= ABOUT ================= */
+.about{
+  padding:80px 15%;
+  text-align:center;
+}
+
+.about h2{
+  font-family:'Orbitron';
+  color:var(--neon-pink);
+  text-shadow:0 0 10px var(red);
+  margin-bottom:15px;
+}
+
+/* ================= EVENTS ================= */
+.events{
+  padding:80px 60px;
+  color:white;
+    text-shadow: 0 0 25px red;
+  text-align:center;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.event-card{
+  background:var(--card-bg);
+  padding:20px;
+  border-radius:15px;
+  position:relative;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+/* NEON BORDER */
+.event-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border:2px solid var(--neon-blue);
+  filter:blur(8px);
+  opacity:0;
+}
+
+.event-card:hover::before{opacity:1;}
+
+/* HEADLIGHT SWEEP */
+.event-card::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-120%;
+  width:60%;
+  height:200%;
+  background:linear-gradient(120deg, transparent, rgba(0,247,255,0.4), transparent);
+  transform:rotate(20deg);
+}
+
+.event-card:hover::after{
+  left:120%;
+  transition:0.6s;
+}
+
+.event-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.event-card h3{
+  margin-top:15px;
+  color:var(--neon-blue);
+}
+
+/* ================= REGISTER ================= */
+.register{
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#020617,#0a1a3c);
+}
+
+.register h2{+
+  font-family:'Orbitron';
+  text-shadow:0 0 10px var(--neon-blue);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;}
+
+  .menu{
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:#000;
+    flex-direction:column;
+    padding:20px;
+    display:none;
+  }
+
+  .menu.show{display:flex;}
+  .hamburger{display:block;}
+}
+/* ================= CLICK FIX ================= */
+.event-card::before,
+.event-card::after{
+  pointer-events: none;
+}
+
+.event-card a{
+  position: relative;
+  z-index: 10;
+}
+
+.event-card{
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: cardReveal 0.8s ease forwards;
+}
+@keyframes cardReveal{
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.event-card {
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.events{
+  display: flex;
+  flex-direction: column; 
+  gap: 30px;
+  padding: 80px 20px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* HERO CENTER */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #050014, #000);
+}
+
+.hero-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* COLLEGE NAME (TOP) */
+.college {
+ font-family:"bloddy";
+    text-align: center;
+    font-size: 3rem;
+    color: #0718cf;
+    text-shadow: 0 0 25px red;
+  
+}
+.dept-name{
+ font-family:"bloddy" ;
+    text-align: center;
+    font-size: 30px;
+    color:white;
+    text-shadow: 0 0 25px red;
+  
+}
+
+/* LOGO CENTER */
+.hero-logo {
+  width: 400px;
+  filter: drop-shadow(0 0 25px cyan);
+}
+
+/* ZYNEX TEXT BELOW LOGO */
+.event-title {
+  font-size: 64px;
+  color: rgb(80, 39, 228);
+  text-shadow: 0 0 25px rgb(42, 43, 68);
+}
+
+/* TAGLINE */
+.tagline{
+  max-width: 500px;
+  font-size: 18px;
+  color:red;
+}
+
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: cyan;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 20px cyan;
+}
+/* REMOVE UNWANTED HORIZONTAL LINE */
+.hero::before,
+.hero::after,
+.hero-content::before,
+.hero-content::after {
+  content: none !important;
+}
+
+.hero {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #050014, #000);
+}
+body {
+  min-height: 100vh;
+  color: #fff;
+  background: url("SYMPO5.jpeg") center / cover no-repeat fixed;
+}
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("college.jpg");   /* 👉 unga college image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #1a1919;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("college.jpg") center/cover no-repeat;
+    overflow: hidden;
+}
+
+/* 🔹 Full-page blur (for black area feel) */
+.full-blur {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.25);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relativE;
+    z-index: 2;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding-top: 120px;   /* 👈 LOGO kizha move aagum */
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: rgb(78, 56, 201);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #000;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .menu a {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+}
+
+/* COLLEGE INFO SECTION */
+.college-info {
+ margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* LOGO LEFT */
+.college-logo {
+  width: 80px;
+  height: auto;
+}
+
+/* COLLEGE NAME RIGHT */
+.college-info h2 {
+  font-family: "bloody";
+  font-size: 30px;
+  font-weight: 700;
+  color:white;
+  text-shadow: 0 0 25px red;
+}
+
+@media (max-width: 600px) {
+  .college-logo {
+    width: 65px;
+  }
+
+  .college-info h2 {
+    font-size: 20px;
+    text-align: left;
+  }
+}

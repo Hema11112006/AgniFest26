@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZYNEX 26</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">AGNI FEST ’26</div>
+
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#register">Register</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+<div class="college-info">
+    <img src="agnilofo-removebg-preview.png" class="college-logo">
+    <h2>AGNI COLLEGE OF TECHNOLOGY</h2>
+  </div>
+
+  <h3 class="dept-name">
+    DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
+  </h3>
+  <h3 class="dept-name">PRESENTS</h3>
+    <!-- ZYNEX LOGO -->
+  <div class="hero-img">
+    <img src="logoo1.png" class="zynex-logo">
+  </div>
+ 
+</section>
+
+ <div class="hero-content">
+    <h1>ZYNEX ’26</h1>
+    <p>Innovate • Create • Compete</p>
+    <a href="#events" class="btn">Explore Events</a>
+  </div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2>About the Symposium</h2>
+  <p>
+    ZYNEX 2026 is the official ECE symposium of Agni College of Technology, bringing together innovation, communication, and creativity through exciting technical and non-technical events.
+  </p>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <h2>Events</h2>
+
+  <div class="event-card reveal">
+    <img src="scritathon.jpeg" height="400" width="200">
+    <a href="electro.html" target="_blank" class="btn">View</a>
+    <h3>SCRIPTATHON</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="rapid.jpeg" height="400" width="200">
+    <a href="rapid.html" target="_blank" class="btn">View</a>
+    <h3>RAPID HARDWARE</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="innowavw1.jpeg" height="400" width="200">
+    <a href="innowave.html" target="_blank" class="btn">View</a>
+    <h3>INNOWAVE</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="pulse1.jpeg" height="400" width="200">
+    <a href="pulse.html" target="_blank" class="btn">View</a>
+    <h3>PULSE IQ</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="electropictionary.jpeg" height="400" width="200">
+    <a href="pictionary.html" target="_blank" class="btn">View</a>
+    <h3>ELECTROPICTIONARY</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="vecnas1.jpeg" height="400" width="200">
+    <a href="vecna.html" target="_blank" class="btn">View</a>
+    <h3>VECNA'S CURSE</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="IPL AUCTION.jpeg" height="400" width="200">
+    <a href="ipl.html" target="_blank" class="btn">View</a>
+    <h3>IPL AUCTION</h3>
+  </div>
+
+  <div class="event-card reveal">
+    <img src="hawkin1.jpeg" height="400" width="200">
+    <a href="hawkin.html" target="_blank" class="btn">View</a>
+    <h3>HAWKIN'S LOCKDOWN</h3>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <h2>Register Now</h2>
+  <p>Secure your spot in ZYNEX ’26</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScFxdLpKx9J1gw6bLsTptoR9faOt06_KhGESCqqrZDbtqxi8g/viewform" target="_blank" class="btn">
+    Register
+  </a>
+</section>
+
+<!-- REVEAL SCRIPT -->
+<script>
+  window.addEventListener("scroll", revealCards);
+  window.addEventListener("load", revealCards);
+
+  function revealCards() {
+    const cards = document.querySelectorAll(".reveal");
+    const windowHeight = window.innerHeight;
+
+    cards.forEach((card, index) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < windowHeight - 100) {
+        setTimeout(() => {
+          card.classList.add("active");
+        }, index * 200);
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

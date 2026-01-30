@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Orbitron', sans-serif;
+}
+
+/* BODY */
+body{
+  background:#040912;
+  color:#e8faff;
+  overflow-x:hidden;
+}
+
+/* HACKATHON NEON BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0,255,255,0.15), transparent 40%),
+    radial-gradient(circle at 85% 25%, rgba(255,0,255,0.15), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(0,255,128,0.15), transparent 40%);
+  z-index:-2;
+}
+
+/* MOVING ENERGY */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 10px 10px,
+      rgba(0,255,255,0.9) 2px,
+      transparent 3px);
+  background-size:140px 140px;
+  animation:energy 10s linear infinite;
+  opacity:0.25;
+  pointer-events:none;
+  z-index:-1;
+}
+
+@keyframes energy{
+  from{background-position:0 0;}
+  to{background-position:140px 140px;}
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:50px 15px;
+}
+
+header h1{
+  font-size:2.6rem;
+  color:#00ffff;
+  text-shadow:
+    0 0 15px #00ffff,
+    0 0 40px #00ffff;
+}
+
+header p{
+  margin-top:10px;
+  font-size:1.1rem;
+  opacity:0.85;
+}
+
+/* CARDS */
+.card{
+  width:90%;
+  max-width:850px;
+  margin:28px auto;
+  padding:28px;
+  background:rgba(0,0,0,0.65);
+  border-radius:20px;
+  border:1px solid rgba(0,255,255,0.4);
+  box-shadow:
+    0 0 25px rgba(0,255,255,0.35),
+    inset 0 0 20px rgba(0,255,255,0.12);
+  transition:0.35s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:
+    0 0 45px rgba(0,255,255,0.6),
+    inset 0 0 30px rgba(0,255,255,0.25);
+}
+
+/* INTRO CARD */
+.intro{
+  text-align:center;
+}
+
+.tagline{
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+/* HIGHLIGHT */
+.highlight{
+  border:2px solid #ff00ff;
+  box-shadow:
+    0 0 35px rgba(255,0,255,0.6);
+}
+
+/* TITLES */
+h2{
+  margin-bottom:14px;
+  color:#00ffff;
+  text-shadow:0 0 10px #00ffff;
+}
+
+/* LIST */
+ul{
+  padding-left:22px;
+}
+
+li{
+  margin:11px 0;
+}
+
+/* CONTACT */
+.contact p{
+  margin:8px 0;
+}
+
+/* REGISTER BUTTON */
+.register-box{
+  text-align:center;
+  margin:50px 0;
+}
+
+.register-btn{
+  padding:18px 65px;
+  border-radius:50px;
+  background:linear-gradient(90deg,#00ffff,#00ff88);
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  box-shadow:
+    0 0 30px #00ffff,
+    0 0 60px rgba(0,255,255,0.6);
+  position:relative;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+/* BUTTON SHINE */
+.register-btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,
+    transparent,
+    rgba(255,255,255,0.8),
+    transparent);
+  transition:0.7s;
+}
+
+.register-btn:hover::after{
+  left:100%;
+}
+
+.register-btn:hover{
+  transform:scale(1.08);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:0.85rem;
+  opacity:0.7;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  header h1{
+    font-size:2rem;
+  }
+  .card{
+    padding:20px;
+  }
+}
