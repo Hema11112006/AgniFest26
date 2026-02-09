@@ -5,7 +5,7 @@ const eventsData = [
         title: "SCRIPTATHAN",
         img: "script1.jpeg",
         desc: "Where ideas turn into impact through research.",
-        pageUrl: "electro.html" 
+        pageUrl: "SCRIPTATHAN.html" 
     },
     {
         id: 2,
