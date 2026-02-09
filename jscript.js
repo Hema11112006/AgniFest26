@@ -5,7 +5,7 @@ const eventsData = [
         title: "SCRIPTATHAN",
         img: "script1.jpeg",
         desc: "Where ideas turn into impact through research.",
-        pageUrl: "SCRIPTATHAN.html" 
+        pageUrl: "scriptathan.html" 
     },
     {
         id: 2,
@@ -33,7 +33,7 @@ const eventsData = [
         title: "ELECTROPICTIONARY",
         img: "electro1.jpeg",
         desc: "From doodles to devices.",
-        pageUrl: "electro.html" 
+        pageUrl: "electropictionary.html" 
     },
     {
         id: 6,
